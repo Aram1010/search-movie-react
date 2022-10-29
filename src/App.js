@@ -3,6 +3,7 @@ import axios from "./axios";
 
 const App = () => {
   const [movie, setMovie] = useState("");
+  const [input, setInput] = useState(null)
 
   const getMovies = async (title) => {
     await axios
@@ -16,11 +17,19 @@ const App = () => {
       });
   };
 
-  useEffect(() => {
-    getMovies("batman");
-  }, []);
+  const submitSearch = (e) => {
+    e.preventDefault()
 
-  return <div>App</div>;
+    getMovies(input);
+  }
+
+  return <div className="app">
+    
+    <form onSubmit={submitSearch}>
+      <input type="text" onChange={(e) => setInput(e.target.value)} />
+      <button type="submit">search</button>
+    </form>
+  </div>;
 };
 
 export default App;
