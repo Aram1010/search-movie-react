@@ -10,6 +10,9 @@ module.exports = {
         "5px": "5px",
         "10px": "10px",
       },
+      screens: {
+      'smax': {'max': '639px'},
+    }
     },
   },
   plugins: [],
