@@ -11,8 +11,8 @@ module.exports = {
         "10px": "10px",
       },
       screens: {
-      'smax': {'max': '639px'},
-    }
+        smax: { max: "639px" },
+      },
     },
   },
   plugins: [],

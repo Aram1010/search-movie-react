@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "../utils/axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -35,21 +35,19 @@ const Navbar = () => {
     <div className="sm:flex p-[5px] items-center ">
       <div className="flex-[0.20]">
         <div className="flex justify-between items-center">
+          <FontAwesomeIcon
+            className="flex-[0.2] sm:hidden text-[20px] cursor-pointer pl-[5px]"
+            icon={faBookmark}
+          />
           <img
             src="https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png?w=684&h=456"
             alt=""
-            className="w-[180px] max-w-[180px] flex-[0.75]"
+            className="w-[180px] max-w-[180px] flex-[0.6]"
           />
-          <div className="flex flex-[0.25] justify-center sm:hidden">
-            <FontAwesomeIcon
-              className="flex-[0.5] text-[20px] cursor-pointer"
-              icon={faBookmark}
-            />
-            <FontAwesomeIcon
-              className="flex-[0.5] text-[20px] cursor-pointer"
-              icon={faUser}
-            />
-          </div>
+          <FontAwesomeIcon
+            className="flex-[0.2] sm:hidden text-[20px] cursor-pointer pr-[5px]"
+            icon={faUser}
+          />
         </div>
       </div>
       <form className="flex-[0.65] mx-[8px]" onSubmit={submitSearch}>
