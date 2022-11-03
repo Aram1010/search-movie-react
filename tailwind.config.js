@@ -11,7 +11,17 @@ module.exports = {
         "10px": "10px",
       },
       screens: {
-        smax: { max: "639px" },
+        lmin: { min: "900px" },
+        smax: { max: "900px" },
+        smin: { min: "639px" },
+        mmin: { min: "639px" },
+        mmax: { max: "639px" },
+      },
+      boxShadow: {
+        "search-shadow": "rgba(149 , 157, 165, 0.2) 0px 8px 24px",
+      },
+      gridTemplateColumns: {
+        searchGrid: "repeat(2, 1fr)",
       },
     },
   },
