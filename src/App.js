@@ -5,8 +5,12 @@ import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <div className="flex flex-col">
-      <Navbar />
-      <Feed />
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="feed">
+        <Feed />
+      </div>
     </div>
   );
 };
