@@ -1,5 +1,5 @@
 import React from "react";
-import Feed from "./container/Feed";
+import Feed from "./container/Home";
 import Navbar from "./components/Navbar";
 
 const App = () => {
