@@ -9,15 +9,25 @@ const IMAGE_PATH = "https://www.themoviedb.org/t/p/w780";
 const Feed = () => {
   const [{ search }, dispatch] = DataLayerValue();
   const [searchedMovies, setSearchedMovies] = useState([]);
-  const isrender = useRef(true);
 
   useEffect(() => {
-    if (isrender.current) {
-      isrender.current = false;
-      setSearchedMovies([]);
-      getGenres(search);
-    }
-  }, []);
+    let isRender = false;
+
+    const handle = async () => {
+      await setTimeout(1000);
+
+      if (!isRender) {
+        setSearchedMovies([]);
+        getGenres(search);
+      }
+    };
+
+    handle();
+
+    return () => {
+      isRender = true;
+    };
+  }, [search]);
 
   const getGenres = (search) => {
     if (search) {
