@@ -11,6 +11,8 @@ module.exports = {
         "10px": "10px",
       },
       screens: {
+        sxl: {max: "1536px"},
+        fxl: {min: "1521px"},
         lmin: { min: "900px" },
         smax: { max: "900px" },
         smin: { min: "639px" },
@@ -25,5 +27,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+  ],
 };
