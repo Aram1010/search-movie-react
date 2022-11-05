@@ -28,7 +28,7 @@ const Poster = ({ searchedMovies, IMAGE_PATH }) => {
                     }
                   : {
                       backgroundImage: `url(${
-                        IMAGE_PATH + search.poster_path
+                        "https://www.macmillandictionary.com/external/slideshow/thumb/Grey_thumb.png"
                       })`,
                     }
               }
@@ -56,20 +56,3 @@ const Poster = ({ searchedMovies, IMAGE_PATH }) => {
 };
 
 export default Poster;
-
-// {searchedMovies ? (
-//   <div className="absolute left-[1rem] top-[1rem] text-[#ffff]">
-//     <h2 className="text-[24px] tracking-wide font-bold">
-//       {searchedMovies[0].title}
-//       {console.log(searchedMovies[0])}
-//     </h2>
-//     <p>{searchedMovies[0].release_date}</p>
-//   </div>
-// ) : null}
-// <button
-//   type="button"
-//   className="bg-[rgba(255,255,255,0.5)] backdrop-sepia-[5px] shadow-[rgba(149,157,165,0.7)_0px_8px_24px]
-//     p-[12px] px-[18px] text-[#ffff] rounded-[50px] absolute bottom-[1rem] left-[1rem]"
-// >
-//   <FontAwesomeIcon icon={faPlay} />
-// </button>

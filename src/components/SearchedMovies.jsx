@@ -3,7 +3,7 @@ import React from "react";
 const SearchedMovies = ({ searchedMovies, IMAGE_PATH }) => {
   return (
     <div className="flex gap-[10px] mt-[20px] mx-[10px] overflow-x-auto overflow-y-hidden scrollbar-hide">
-      {searchedMovies
+      {searchedMovies[0]
         ? searchedMovies?.map((movie) => (
             <div className="max-w-[300px] my-[20px]" key={movie.id}>
               <img
@@ -29,7 +29,7 @@ const SearchedMovies = ({ searchedMovies, IMAGE_PATH }) => {
               </div>
             </div>
           ))
-        : null}
+        : <h2 className="text-[20px]">No Results</h2> }
     </div>
   );
 };
