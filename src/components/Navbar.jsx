@@ -4,12 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { DataLayerValue } from "../context/DataLayer";
+import { useNavigate } from 'react-router-dom'
 
 const SEARCH_API = `/search/movie?api_key=`;
 
 const Navbar = () => {
   const [{}, dispatch] = DataLayerValue();
   const [input, setInput] = useState(null);
+
+  const navigate = useNavigate();
 
   const getMovies = async (title) => {
     await axios
@@ -28,6 +31,7 @@ const Navbar = () => {
   const submitSearch = (e) => {
     e.preventDefault();
 
+    navigate('/movies')
     getMovies(input);
   };
 

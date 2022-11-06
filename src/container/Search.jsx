@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { DataLayerValue } from "../context/DataLayer";
 import Posters from "../components/Posters";
@@ -7,7 +7,7 @@ import SearchedMovies from "../components/SearchedMovies";
 const IMAGE_PATH = "https://www.themoviedb.org/t/p/w780";
 
 const Feed = () => {
-  const [{ search }, dispatch] = DataLayerValue();
+  const [{ search }] = DataLayerValue();
   const [searchedMovies, setSearchedMovies] = useState([]);
 
   useEffect(() => {

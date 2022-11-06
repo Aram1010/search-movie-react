@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 import { DataLayer } from "./context/DataLayer";
 import { reducer, initialState } from "./context/reducer";
 
@@ -12,8 +14,10 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <DataLayer initialState={initialState} reducer={reducer}>
-      <App />
-    </DataLayer>
+      <DataLayer initialState={initialState} reducer={reducer}>
+        <Router>
+          <App />
+        </Router>
+      </DataLayer>
   </React.StrictMode>
 );

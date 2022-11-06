@@ -1,11 +1,22 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const SearchedMovies = ({ searchedMovies, IMAGE_PATH }) => {
   return (
-    <div className="flex gap-[10px] mt-[20px] mx-[10px] overflow-x-auto overflow-y-hidden scrollbar-hide">
-      {searchedMovies[0]
-        ? searchedMovies?.map((movie) => (
-            <div className="max-w-[300px] my-[20px]" key={movie.id}>
+    <ul className="flex gap-[10px] mt-[20px] mx-[10px] overflow-x-auto overflow-y-hidden scrollbar-hide">
+      {searchedMovies[0] ? (
+        searchedMovies?.map((movie) => (
+          <NavLink
+            to={`/movies/${movie.id}`}
+            key={movie.id}
+            className="link"
+            state={movie}
+            end
+          >
+            <li
+              className="max-w-[300px] my-[20px]"
+              key={movie.id}
+            >
               <img
                 src={
                   movie.poster_path !== null
@@ -27,10 +38,13 @@ const SearchedMovies = ({ searchedMovies, IMAGE_PATH }) => {
                     ))
                   : null}
               </div>
-            </div>
-          ))
-        : <h2 className="text-[20px]">No Results</h2> }
-    </div>
+            </li>
+          </NavLink>
+        ))
+      ) : (
+        <h2 className="text-[20px]">No Results</h2>
+      )}
+    </ul>
   );
 };
 
