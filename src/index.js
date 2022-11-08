@@ -14,10 +14,10 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-      <DataLayer initialState={initialState} reducer={reducer}>
-        <Router>
-          <App />
-        </Router>
-      </DataLayer>
+    <DataLayer initialState={initialState} reducer={reducer}>
+      <Router>
+        <App />
+      </Router>
+    </DataLayer>
   </React.StrictMode>
 );
