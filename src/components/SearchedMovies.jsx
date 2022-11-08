@@ -14,7 +14,7 @@ const SearchedMovies = ({ searchedMovies, IMAGE_PATH }) => {
             end
           >
             <li
-              className="max-w-[300px] my-[20px]"
+              className="max-w-[200px] my-[20px]"
               key={movie.id}
             >
               <img
