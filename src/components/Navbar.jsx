@@ -4,13 +4,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { DataLayerValue } from "../context/DataLayer";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
+const getWindowSize = () => {
+  const { innerWidth } = window;
+
+  return { innerWidth };
+};
 
 const SEARCH_API = `/search/movie?api_key=`;
 
 const Navbar = () => {
-  const [{} , dispatch] = DataLayerValue();
+  const [{}, dispatch] = DataLayerValue();
   const [input, setInput] = useState(null);
   const [expand, setExpand] = useState(false);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
 
   const navigate = useNavigate();
 
@@ -39,14 +47,31 @@ const Navbar = () => {
     setExpand(true);
   };
 
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.addEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <div className="">
-      <div className="flex p-[5px] items-center m-[auto] justify-between">
+      <div className="flex p-[5px] items-center m-[auto] justify-between smax:mt-[20px]">
         <div className="flex-[0.50]">
           <img
-            src="https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png?w=684&h=456"
+            src=
+            {
+              windowSize.innerWidth > 900 ?
+              "https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png?w=684&h=456"
+              : "https://1000logos.net/wp-content/uploads/2017/05/Netflix-Logo-2006.png"
+            }
             alt=""
-            className="w-[180px] max-w-[180px] cursor-pointer"
+            className="w-[180px] max-w-[180px] max-h-[107px] cursor-pointer smax:w-[90px]"
           />
         </div>
         <form
