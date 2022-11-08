@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import MovieDescription from "../components/MovieDescription";
 
 const IMAGE_PATH = "https://www.themoviedb.org/t/p/w780";
 
@@ -15,7 +16,7 @@ const Movie = () => {
   console.log(movie);
 
   return (
-    <div className="text-[#ffff]">
+    <div className="text-[#ffff] h-[100%]">
       <div
         style={
           movie
@@ -24,11 +25,9 @@ const Movie = () => {
               }
             : null
         }
-        className="fixed top-0 left-0 w-[100%] h-[100vh] bg-cover bg-no-repeat bg-[center] -z-50"
+        className="fixed top-0 left-0 w-[100%] h-[100vh] smax:bg-cover smax:bg-no-repeat bg-center -z-50"
       ></div>
-      <div className="">
-        <h2 className="">{movie ? movie.title : null}</h2>
-    </div>
+      {movie ? <MovieDescription movie={movie} /> : null}
     </div>
   );
 };
