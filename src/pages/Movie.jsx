@@ -19,10 +19,8 @@ const Movie = () => {
     const hours = Math.floor(total_minutes / 60);
     const minutes = total_minutes % 60;
 
-    return (
-      <p className="ml-[20px]">{`${hours}h ${minutes}m`}</p>
-    )
-  }
+    return <p className="ml-[20px]">{`${hours}h ${minutes}m`}</p>;
+  };
 
   return (
     <div className="text-[#ffff] h-[100%]">

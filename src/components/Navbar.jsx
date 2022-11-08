@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "../utils/axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
-import { faBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { DataLayerValue } from "../context/DataLayer";
 import { useNavigate } from "react-router-dom";
 
 const SEARCH_API = `/search/movie?api_key=`;
 
 const Navbar = () => {
-  const [{}, dispatch] = DataLayerValue();
+  const [{} , dispatch] = DataLayerValue();
   const [input, setInput] = useState(null);
+  const [expand, setExpand] = useState(false);
 
   const navigate = useNavigate();
 
@@ -35,6 +35,10 @@ const Navbar = () => {
     getMovies(input);
   };
 
+  const expandSearch_bar = () => {
+    setExpand(true);
+  };
+
   return (
     <div className="">
       <div className="flex p-[5px] items-center m-[auto] justify-between">
@@ -46,21 +50,42 @@ const Navbar = () => {
           />
         </div>
         <form
-          className="flex-[0.50] mx-[8px] w-[100px]"
+          className="flex-[0] mx-[8px] w-[100px]"
           onSubmit={submitSearch}
+          style={
+            expand
+              ? {
+                  flex: "0.5",
+                  cursor: "auto",
+                  transition: "flex 500ms ease-in-out",
+                }
+              : {
+                  flex: "0",
+                  cursor: "pointer",
+                }
+          }
+          onClick={() => expandSearch_bar()}
         >
           <div
             className="flex bg-[rgba(236,240,243,.2)] backdrop-blur-[5px] 
           rounded-[50px] p-[12px] px-[20px] shadow-[rgba(149,157,165,0.2)_0px_8px_24px] "
           >
-            <button className="bg-transparent" type="submit">
+            <button
+              className="bg-transparent"
+              style={
+                expand ? { pointerEvents: "auto" } : { pointerEvents: "none" }
+              }
+              type="submit"
+            >
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
                 className="text-[#A3A6AF]"
+                style={expand ? { color: "#A3A6AF" } : { color: "#222" }}
               />
             </button>
             <input
               className="bg-transparent outline-none ml-[10px] w-[100%]"
+              style={expand ? { display: "block" } : { display: "none" }}
               type="text"
               placeholder="Search"
               onChange={(e) => setInput(e.target.value)}
