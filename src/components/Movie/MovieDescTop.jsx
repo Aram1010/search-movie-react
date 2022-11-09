@@ -39,7 +39,9 @@ const MovieDescTop = ({ movie }) => {
         let trailerkey = res.data.videos.results.find(
           (trailer_name) => trailer_name.name === "Official Trailer"
         );
-        setTrailerKey(trailerkey.key);
+        setTrailerKey(
+          trailerkey ? trailerkey.key : res.data.videos.results[0].key
+        );
       })
       .catch((error) => console.log(error));
     {
@@ -60,11 +62,7 @@ const MovieDescTop = ({ movie }) => {
         className="fixed top-0 left-0 w-[100%] h-[100vh] smax:bg-cover smax:bg-no-repeat bg-center -z-50"
       ></div>
       <div className="absolute w-[100%] z-[99]">
-        {isPlayed ? (
-          <YouTube videoId={trailer_KEY} opts={opts} />
-        ) : (
-          console.log("false")
-        )}
+        {isPlayed ? <YouTube videoId={trailer_KEY} opts={opts} /> : null}
       </div>
       <div className="mx-[20px]">
         <h2
@@ -101,7 +99,7 @@ const MovieDescTop = ({ movie }) => {
                   bottom: "0",
                   right: "1rem",
                   borderRadius: "50px",
-                  padding: "15px 21px",
+                  padding: "15px 20px",
                   display: "block",
                 }
               : null

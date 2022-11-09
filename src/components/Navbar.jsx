@@ -1,4 +1,4 @@
-import React, { useState ,  useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "../utils/axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -6,9 +6,9 @@ import { DataLayerValue } from "../context/DataLayer";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const getWindowSize = () => {
-  const { innerWidth } = window;
+  const { innerWidth , innerHeight } = window;
 
-  return { innerWidth };
+  return { innerWidth , innerHeight };
 };
 
 const SEARCH_API = `/search/movie?api_key=`;
@@ -49,6 +49,10 @@ const Navbar = () => {
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
+      dispatch({
+        type: "SET_WINDOW_SIZE",
+        windowSize: getWindowSize(),
+      });
     }
     function handleClickNavbar(e) {
       return e.target.id !== "search" ? setExpand(false) : setExpand(true);
@@ -67,7 +71,7 @@ const Navbar = () => {
     <div className="">
       <div className="flex p-[5px] items-center m-[auto] justify-between smax:mt-[20px]">
         <div className="flex-[0.50]">
-          <NavLink to="/">
+          <NavLink to="/feed">
             <img
               src={
                 windowSize.innerWidth > 900

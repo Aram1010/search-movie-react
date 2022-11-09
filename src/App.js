@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./container/Home";
 import Search from "./container/Search";
 import Movie from "./pages/Movie";
+import Feed from "./components/Feed";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/feed" element={<Feed />} />
         <Route path="/movies" element={<Search />} />
         <Route path="/movies/:id" element={<Movie />} />
       </Routes>
