@@ -1,12 +1,10 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const MovieDescription = ({ movie }) => {
   return (
     <div
-      className="absolute bottom-0 smax:left-[50%] smax:translate-x-[-50%] 
-      w-[90%] smin:max-w-[600px] max-w-[800px] h-[40%] min-h-[300px] bg-[rgba(236,240,243,.2)] 
+      className="smin:hidden absolute bottom-0 smax:left-[50%] smax:translate-x-[-50%] 
+      w-[90%] smin:max-w-[800px] max-w-[800px] h-[40%] min-h-[300px] bg-[rgba(236,240,243,.2)] 
       shadow-[rgba(149,157,165,0.2)_0px_8px_24px] backdrop-blur-[5px] rounded-tr-[50px] 
       smax:rounded-tl-[50px] p-[20px] pb-[30px] "
     >
@@ -39,18 +37,6 @@ const MovieDescription = ({ movie }) => {
               : null}
             <p>...</p>
           </ul>
-        </span>
-        <span>
-          <button
-            type="button"
-            className="flex items-center bg-[#ffff] py-[12px] px-[18px] smin:text-[18px] smin:px-[20px] smin:py-[12px] 
-                  text-[#222] shadow-[rgba(100,100,111,0.9)_0px_7px_29px_0px]
-                  rounded-[50px] absolute bottom-[5rem] right-[1rem] 
-                  hover:scale-[1.05] transition duration-100 ease-in-out"
-          >
-            <FontAwesomeIcon icon={faPlay} />
-            <p className="ml-[10px] text-[14px]">Play Trailer</p>
-          </button>
         </span>
       </div>
     </div>
