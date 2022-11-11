@@ -49,7 +49,7 @@ const Feed = () => {
       });
     }
   };
-
+  
   return (
     <div className="mt-[30px]">
       <Posters searchedMovies={searchedMovies} IMAGE_PATH={IMAGE_PATH} />

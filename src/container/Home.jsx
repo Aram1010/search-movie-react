@@ -4,7 +4,7 @@ import Feed from "../pages/Feed";
 import { DataLayerValue } from "../context/DataLayer";
 
 const Home = () => {
-  const [{ search }, dispatch] = DataLayerValue();
+  const [{ search }] = DataLayerValue();
   return <div>{search ? <Search /> : <Feed />}</div>;
 };
 

@@ -75,7 +75,7 @@ const MovieDescTop = ({ movie }) => {
           <FontAwesomeIcon className="text-[#F2BB2E]" icon={faStar} />
           <p className="ml-[10px]">
             {movie
-              ? `${Math.round(movie.vote_average * 100) / 100} | ${
+              ? `${Math.round(movie.vote_average * 10) / 10} | ${
                   movie.vote_count
                 }`
               : null}
