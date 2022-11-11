@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { DataLayerValue } from "../context/DataLayer";
-import Posters from "../components/Posters";
-import SearchedMovies from "../components/SearchedMovies";
+import Posters from "../components/Search/Posters";
+import SearchedMovies from "../components/Search/SearchedMovies";
 
 const IMAGE_PATH = "https://www.themoviedb.org/t/p/w780";
 

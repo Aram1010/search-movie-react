@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./container/Home";
-import Search from "./container/Search";
-import Movie from "./pages/Movie";
-import Feed from "./components/Feed";
+import Search from "./pages/Search";
+import MoviePage from "./pages/MoviePage";
+import Feed from "./pages/Feed";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/movies" element={<Search />} />
-        <Route path="/movies/:id" element={<Movie />} />
+        <Route path="/movies/:id" element={<MoviePage />} />
       </Routes>
     </div>
   );

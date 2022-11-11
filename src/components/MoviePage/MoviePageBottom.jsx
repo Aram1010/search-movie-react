@@ -17,7 +17,7 @@ const MovieDescription = ({ movie }) => {
             <span>
               <h2 className="smin:text-[20px]">Category</h2>
               <ul className="smin:text-[16px] text-[15px]">
-                {movie.genres[0]
+                {movie.genres
                   ? movie.genres.map((genre, ind) => (
                       <span>{(ind ? ", " : "") + genre.name}</span>
                     ))
@@ -46,7 +46,7 @@ const MovieDescription = ({ movie }) => {
           </div>
         </div>
       ) : (
-        <p>Hello</p>
+        null
       )}
     </>
   );

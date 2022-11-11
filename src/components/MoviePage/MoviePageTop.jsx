@@ -96,7 +96,7 @@ const MovieDescTop = ({ movie }) => {
           style={
             isPlayed
               ? {
-                  bottom: "0",
+                  top: "1rem",
                   right: "1rem",
                   borderRadius: "50px",
                   padding: "15px 20px",

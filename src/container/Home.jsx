@@ -1,6 +1,6 @@
 import React from "react";
-import Search from "./Search";
-import Feed from "../components/Feed";
+import Search from "../pages/Search";
+import Feed from "../pages/Feed";
 import { DataLayerValue } from "../context/DataLayer";
 
 const Home = () => {

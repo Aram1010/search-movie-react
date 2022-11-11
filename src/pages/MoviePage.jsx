@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import MovieDescBottom from "../components/Movie/MovieDescBottom";
-import MovieDescTop from "../components/Movie/MovieDescTop";
+import MoviePageBottom from "../components/MoviePage/MoviePageBottom";
+import MoviePageTop from "../components/MoviePage/MoviePageTop";
 
 const Movie = () => {
   const location = useLocation();
@@ -16,8 +16,8 @@ const Movie = () => {
     <div className="text-[#ffff] h-[100%]">
       {movie ? (
         <>
-          <MovieDescTop movie={movie} />
-          <MovieDescBottom movie={movie} />
+          <MoviePageTop movie={movie} />
+          <MoviePageBottom movie={movie} />
         </>
       ) : null}
       <div
