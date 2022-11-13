@@ -91,7 +91,7 @@ const MovieDescTop = ({ movie }) => {
           type="button"
           className="flex items-center bg-[#ffff] py-[15px] px-[20px] my-[20px]
             text-[12px] smin:px-[20px] smin:py-[17px] text-[#000] shadow-[rgba(149,157,165,0.2)_0px_8px_24px]
-            rounded-[10px] hover:scale-[1.05] transition duration-100 ease-in-out absolute z-[100]"
+            rounded-[10px] hover:scale-[1.05] transition duration-100 ease-in absolute z-[100]"
           onClick={() => renderTrailer()}
           style={
             isPlayed

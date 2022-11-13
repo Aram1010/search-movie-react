@@ -108,7 +108,7 @@ const Movies = ({ genre, title, first, second, withgenres, genre_number }) => {
                   end
                 >
                   <div
-                    className="relative w-[500px] h-[300px] bg-cover bg-no-repeat bg-center rounded-[20px] cursor-pointer"
+                    className="relative w-[500px] h-[300px] bg-cover bg-no-repeat bg-center rounded-[20px] cursor-pointer transition duration-300 ease-in-out hover:scale-[1.05]"
                     style={Object.assign(
                       {},
                       movie.backdrop_path
